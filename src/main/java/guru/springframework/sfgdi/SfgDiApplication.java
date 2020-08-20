@@ -1,9 +1,6 @@
 package guru.springframework.sfgdi;
 
-import guru.springframework.sfgdi.controller.ConstructorInjectedController;
-import guru.springframework.sfgdi.controller.MyController;
-import guru.springframework.sfgdi.controller.PropertyInjectedController;
-import guru.springframework.sfgdi.controller.SetterInjectedController;
+import guru.springframework.sfgdi.controller.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +10,9 @@ public class SfgDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 		System.out.println("----- Primary Injection");
 		MyController myController = (MyController) ctx.getBean("myController"); // Never explicitly created this object via new MyController();, due to IoC Spring is handling the construction of this object
