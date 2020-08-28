@@ -1,0 +1,6 @@
+# JMS Properties
+guru:
+  jms:
+    username: jmsUser
+    password: jmsPass
+    url: jmsURL
