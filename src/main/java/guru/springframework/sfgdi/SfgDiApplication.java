@@ -1,6 +1,7 @@
 package guru.springframework.sfgdi;
 
 import guru.springframework.sfgdi.controller.*;
+import guru.springframework.sfgdi.examplebeans.FakeDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -11,7 +12,7 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
 
-		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		/*I18nController i18nController = (I18nController) ctx.getBean("i18nController");
 		System.out.println(i18nController.sayHello());
 
 		System.out.println("----- Primary Injection");
@@ -28,7 +29,13 @@ public class SfgDiApplication {
 
 		System.out.println("----- Constructor Injection");
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
-		System.out.println(constructorInjectedController.getGreeting());
+		System.out.println(constructorInjectedController.getGreeting());*/
+
+		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+
+		System.out.println("fakeDataSource - username = " + fakeDataSource.getUser());
+		System.out.println("fakeDataSource - passwprd = " + fakeDataSource.getPassword());
+		System.out.println("fakeDataSource - dburl = " + fakeDataSource.getUrl());
 	}
 
 }
