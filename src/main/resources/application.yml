@@ -4,3 +4,11 @@ guru:
     username: jmsUser
     password: jmsPass
     url: jmsURL
+
+# YAML file separator
+---
+spring:
+  profiles: es
+guru:
+  jms:
+    username: JMS Username $$$$$$$ Spanish
