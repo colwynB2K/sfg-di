@@ -1,0 +1,41 @@
+# This is a comment
+
+name: Ivo
+
+names: # Inline comment works
+  - Ivo
+  - Kevin
+  - Marco
+
+pound_sign: "#" # Now it will be a value inside the quotes
+
+# Complex objects
+book:
+    author: Joe Buck
+    publisher: Random House
+
+# Booleans
+truth: yes
+
+another_truth: True
+
+more_true: true
+
+false: no # No, false. FALSE
+
+string_val: "This is it's quote" # Single quotes need to be escaped with "
+
+coorPstring: "my courses: one two three" # : need to be escaped with "
+
+# new line characters are included
+include_new_lines: |
+  asd asd adsds
+  asdads asddas adsasa
+  asdasd asdasd addas
+
+# new line characters are ignored
+ignore_new_lines: >
+  this is
+  just one long
+  string
+
